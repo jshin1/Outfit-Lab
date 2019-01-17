@@ -15,20 +15,15 @@ class MainContainer extends Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
         <div className="wrapper-1">
           <ShirtTypeContainer />
           <Canvas />
           <GalleryContainer />
         </div>
         <div className="wrapper-2">
-          <EditorContainer />
+          <EditorContainer shirtColor={this.state.shirtColor}/>
           <Button bsStyle="success">Save to your gallery, playa!</Button>
-        </div>
-=======
-        <Canvas />
-        <EditorContainer shirtColor={this.state.shirtColor}/>
->>>>>>> Connor
+        </div>      
       </div>
     );
   }

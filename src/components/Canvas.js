@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
+
 import { Label } from 'react-bootstrap';
-=======
->>>>>>> Connor
+
 
 class Canvas extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div>
-        <div className='canvas'>
-          <h2>
-            <Label>
-              C A N V A S 🖌
-            </Label>
-          </h2>
-
-        </div>
-=======
       <div class="canvas-container">
       {
         <div>
@@ -27,7 +15,6 @@ class Canvas extends Component {
         <path class="shirt-1" d="M300.92,4.1c7.63,22.52-13.25,33.18-72.3,33.18s-71.39-12.52-61.08-34c1.78-3.69,12.9,4.55,59.56,4.55S298-4.63,300.92,4.1Z"/></svg>
         </div>
       }
->>>>>>> Connor
       </div>
     );
   }
