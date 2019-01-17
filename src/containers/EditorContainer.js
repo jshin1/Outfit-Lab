@@ -9,7 +9,10 @@ class EditorContainer extends Component {
     return (
       <div>
       <div class="editor-container">
-      <Color shirtColor={this.props.shirtColor} />
+      <Color
+        shirtColor={this.props.shirtColor}
+        changeColor={this.props.changeColor}
+       />
       </div>
     </div>
     );

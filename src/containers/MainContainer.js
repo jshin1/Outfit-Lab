@@ -12,18 +12,25 @@ class MainContainer extends Component {
     shirtColor: 'none'
   }
 
+  changeColor = (color) => {
+    console.log(color);
+    this.setState({
+      shirtColor: color.hex
+    })
+  }
+
   render() {
     return (
       <div>
         <div className="wrapper-1">
           <ShirtTypeContainer />
-          <Canvas />
+          <Canvas shirtColor={this.state.shirtColor}/>
           <GalleryContainer />
         </div>
         <div className="wrapper-2">
-          <EditorContainer shirtColor={this.state.shirtColor}/>
+          <EditorContainer changeColor={this.changeColor} />
           <Button bsStyle="success">Save to your gallery, playa!</Button>
-        </div>      
+        </div>
       </div>
     );
   }
