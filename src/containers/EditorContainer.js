@@ -4,7 +4,13 @@ class EditorContainer extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <div className='editor-options'>
+          <div>Colors</div>
+          <div>Textures</div>
+          <div>Patterns</div>
+        </div>
+      </div>
     );
   }
 
