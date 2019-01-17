@@ -6,9 +6,16 @@ import GalleryContainer from './GalleryContainer'
 
 class MainContainer extends Component {
 
+  state= {
+    shirtColor: 'none'
+  }
+
   render() {
     return (
-      <div></div>
+      <div>
+        <Canvas />
+        <EditorContainer shirtColor={this.state.shirtColor}/>
+      </div>
     );
   }
 
