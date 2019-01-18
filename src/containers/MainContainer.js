@@ -3,13 +3,12 @@ import Canvas from '../components/Canvas'
 import ShirtTypeContainer from './ShirtTypeContainer'
 import EditorContainer from './EditorContainer'
 import GalleryContainer from './GalleryContainer'
-import { Button } from 'react-bootstrap';
 
 
 class MainContainer extends Component {
 
   state= {
-    shirtColor: 'none'
+    shirtColor: 'lightgrey'
   }
 
   changeColor = (color) => {
@@ -26,11 +25,8 @@ class MainContainer extends Component {
           <ShirtTypeContainer />
           <Canvas shirtColor={this.state.shirtColor}/>
           <GalleryContainer />
-        </div>
-        <div className="wrapper-2">
+          </div>
           <EditorContainer changeColor={this.changeColor} />
-          <Button bsStyle="success">Save to your gallery, playa!</Button>
-        </div>
       </div>
     );
   }
