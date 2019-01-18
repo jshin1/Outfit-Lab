@@ -10,7 +10,18 @@ class MainContainer extends Component {
   state= {
     shirtColor: 'lightgrey',
     pocketColor: 'blue',
-    target: ''
+    target: '',
+    designs: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/designs')
+    .then(r => r.json())
+    .then(data => {
+      this.setState({
+        designs: data
+      })
+    })
   }
 
   handleTargetClick = (e) => {
@@ -25,16 +36,19 @@ class MainContainer extends Component {
     })
   }
 
+  handleSaveDesign = (e) => {
+    console.log(e)
+  }
+
   render() {
-    console.log(this.state.target)
     return (
       <div>
         <div className="wrapper-1">
           <ShirtTypeContainer />
           <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} handleTargetClick={this.handleTargetClick}/>
-          <GalleryContainer />
+          <GalleryContainer designs={this.state.designs}/>
           </div>
-          <EditorContainer changeColor={this.changeColor} />
+          <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign} />
       </div>
     );
   }

@@ -13,7 +13,7 @@ class EditorContainer extends Component {
         shirtColor={this.props.shirtColor}
         changeColor={this.props.changeColor}
        />
-       <button className="save-button">Save Design+</button>
+       <button onClick={this.props.handleSaveDesign} className="save-button">Save Design+</button>
       </div>
     </div>
     );
