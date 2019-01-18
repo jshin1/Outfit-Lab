@@ -44,25 +44,22 @@
 
 .canvas-container {
   margin-top: 5%;
-  text-align: center;
   margin-left: 10%;
   margin-right: 10%;
-  border: 2px solid lightgrey;
+  border: 5px solid lightgrey;
 }
 
 .editor-container {
   position: relative;;
   height: auto;
-  margin-top: -12%;
+  margin-top: -10%;
   margin-left: 23%;
   margin-right: 23%;
   border: 5px solid lightgrey;
 }
 
-.shirt-base {
-  margin: auto;
-  width: 100%;
-  padding: 0px;
+.shirtColor {
+  width: 130%;
   stroke:#000;
   stroke-width:5px;
 }

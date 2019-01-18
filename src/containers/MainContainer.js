@@ -8,22 +8,30 @@ import GalleryContainer from './GalleryContainer'
 class MainContainer extends Component {
 
   state= {
-    shirtColor: 'lightgrey'
+    shirtColor: 'lightgrey',
+    pocketColor: 'blue',
+    target: ''
+  }
+
+  handleTargetClick = (e) => {
+    this.setState({
+      target: e.target.className.baseVal
+    })
   }
 
   changeColor = (color) => {
-    console.log(color);
     this.setState({
-      shirtColor: color.hex
+      [this.state.target]: color.hex
     })
   }
 
   render() {
+    console.log(this.state.target)
     return (
       <div>
         <div className="wrapper-1">
           <ShirtTypeContainer />
-          <Canvas shirtColor={this.state.shirtColor}/>
+          <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} handleTargetClick={this.handleTargetClick}/>
           <GalleryContainer />
           </div>
           <EditorContainer changeColor={this.changeColor} />
