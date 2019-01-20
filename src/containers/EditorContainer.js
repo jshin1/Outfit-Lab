@@ -8,7 +8,7 @@ class EditorContainer extends Component {
   render() {
     return (
       <div>
-      <div class="editor-container">
+      <div className="editor-container">
       <Color
         shirtColor={this.props.shirtColor}
         changeColor={this.props.changeColor}

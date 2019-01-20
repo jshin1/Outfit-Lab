@@ -10,6 +10,7 @@ class MainContainer extends Component {
   state= {
     shirtColor: 'lightgrey',
     pocketColor: 'blue',
+    ringerColor: 'orange',
     target: '',
     designs: []
   }
@@ -37,7 +38,21 @@ class MainContainer extends Component {
   }
 
   handleSaveDesign = (e) => {
-    console.log(e)
+    console.log(e.target, this.state.shirtColor, this.state.pocketColor, this.state.ringerColor)
+    fetch('http://localhost:3000/api/v1/designs', {
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json'
+      },
+      body: JSON.stringify({
+        shirtType: "Base",
+        shirtColor: this.state.shirtColor,
+        pocketColor: this.state.pocketColor,
+        user_id: 1
+      })
+
+    })
   }
 
   render() {
@@ -45,7 +60,7 @@ class MainContainer extends Component {
       <div>
         <div className="wrapper-1">
           <ShirtTypeContainer />
-          <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} handleTargetClick={this.handleTargetClick}/>
+          <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} ringerColor={this.state.ringerColor} handleTargetClick={this.handleTargetClick}/>
           <GalleryContainer designs={this.state.designs}/>
           </div>
           <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign} />
