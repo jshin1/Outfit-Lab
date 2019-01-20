@@ -4,10 +4,12 @@ import ShirtTypeContainer from './ShirtTypeContainer'
 import EditorContainer from './EditorContainer'
 import GalleryContainer from './GalleryContainer'
 
+import TshirtCanvas from '../components/TshirtCanvas'
+
 
 class MainContainer extends Component {
 
-  state= {
+  state = {
     shirtColor: 'lightgrey',
     pocketColor: 'blue',
     ringerColor: 'orange',
@@ -22,6 +24,7 @@ class MainContainer extends Component {
       this.setState({
         designs: data
       })
+
     })
   }
 
@@ -68,9 +71,28 @@ class MainContainer extends Component {
     return (
       <div>
         <div className="wrapper-1">
+<<<<<<< HEAD
           <ShirtTypeContainer />
           <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} ringerColor={this.state.ringerColor} handleTargetClick={this.handleTargetClick}/>
           <GalleryContainer designs={this.state.designs} handleDeleteDesign={this.handleDeleteDesign}/>
+=======
+
+          <ShirtTypeContainer chooseShirtType={this.chooseShirtType}
+                              chooseFeatures={this.chooseFeatures}/>
+
+          <TshirtCanvas shirtType={this.state.shirtType}
+                  target={this.state.target}
+                  shirtColor={this.state.shirtColor}
+                  pocketColor={this.state.pocketColor}
+                  ringerColor={this.state.ringerColor}
+                  handleTargetClick={this.handleTargetClick}
+
+                  features={this.state.features}
+                  showFeatures={this.showFeatures}
+                  />
+
+          <GalleryContainer designs={this.state.designs}/>
+>>>>>>> 6bba24c6bce7c72889750e53b544ecb9ed8a13ac
           </div>
           <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign} />
       </div>
