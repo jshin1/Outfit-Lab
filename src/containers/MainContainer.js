@@ -51,8 +51,17 @@ class MainContainer extends Component {
         pocketColor: this.state.pocketColor,
         user_id: 1
       })
-
+      // .then(r => r.json())
+      // .then(data => {
+      //   this.setState({
+      //     designs: [...this.state.designs, data]
+      //   })
+      // })
     })
+  }
+
+  handleDeleteDesign = (e) => {
+    console.log(e.target.value)
   }
 
   render() {
@@ -61,7 +70,7 @@ class MainContainer extends Component {
         <div className="wrapper-1">
           <ShirtTypeContainer />
           <Canvas target={this.state.target} shirtColor={this.state.shirtColor} pocketColor={this.state.pocketColor} ringerColor={this.state.ringerColor} handleTargetClick={this.handleTargetClick}/>
-          <GalleryContainer designs={this.state.designs}/>
+          <GalleryContainer designs={this.state.designs} handleDeleteDesign={this.handleDeleteDesign}/>
           </div>
           <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign} />
       </div>
