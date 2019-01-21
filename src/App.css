@@ -75,3 +75,13 @@
 .color-picker {
   max-width: 33%;
 }
+
+
+.outer-circle{
+  fill:none;
+  stroke-width:2px;
+  }
+  .inner-circle{
+  stroke:#000;
+  stroke-width:1px;
+  }
