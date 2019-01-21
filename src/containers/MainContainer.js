@@ -60,6 +60,7 @@ class MainContainer extends Component {
         shirtType: this.state.shirtType,
         shirtColor: this.state.shirtColor,
         pocketColor: this.state.pocketColor,
+        ringerColor: this.state.ringerColor,
         user_id: 1
       })
       // .then(r => r.json())
