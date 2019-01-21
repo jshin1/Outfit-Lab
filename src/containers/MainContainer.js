@@ -3,9 +3,10 @@ import Canvas from '../components/Canvas'
 import ShirtTypeContainer from './ShirtTypeContainer'
 import EditorContainer from './EditorContainer'
 import GalleryContainer from './GalleryContainer'
-import HoodieCanvas from '../components/HoodieCanvas'
 
+import HoodieCanvas from '../components/HoodieCanvas'
 import TshirtCanvas from '../components/TshirtCanvas'
+import BaseBallCanvas from '../components/BaseBallCanvas'
 
 
 class MainContainer extends Component {
@@ -38,6 +39,7 @@ class MainContainer extends Component {
   }
 
   handleTargetClick = (e) => {
+    console.log(e.target.className.baseVal)
     this.setState({
       target: e.target.className.baseVal
     })
@@ -95,6 +97,7 @@ showRinger = () => {
     )
   }
 }
+
  showButtons = () => {
    if (this.state.features.includes('buttons')) {
      return (
@@ -149,7 +152,7 @@ showPouch = () => {
           <input type='checkbox' value='buttons'/> {'Buttons '}
         </form>
       )
-    } else if (this.state.shirtType === '34sleeve') {
+    } else if (this.state.shirtType === 'baseball') {
       return (
         <form onChange={(event) => this.setFeatures(event)}>
           <input type='checkbox' value='ringer'/> {'Ringer '}  <br />
@@ -167,41 +170,56 @@ showPouch = () => {
 
 
   showClothing = () => {
-   if (this.state.shirtType === 'hoodie') {
-     return (
-       <HoodieCanvas shirtType={this.state.shirtType}
-             target={this.state.target}
-             shirtColor={this.state.shirtColor}
-             pocketColor={this.state.pocketColor}
-             ringerColor={this.state.ringerColor}
-             handleTargetClick={this.handleTargetClick}
-             features={this.state.features}
-             showPouch={this.showPouch}
-           />
-       )
-   } else if (this.state.shirtType === 'tshirt') {
-     return (
-       <TshirtCanvas shirtType={this.state.shirtType}
-               target={this.state.target}
-               shirtColor={this.state.shirtColor}
-               pocketColor={this.state.pocketColor}
-               ringerColor={this.state.ringerColor}
-               handleTargetClick={this.handleTargetClick}
-               features={this.state.features}
-               showPocket={this.showPocket}
-               showRinger={this.showRinger}
-               showButtons={this.showButtons}
-               />
-     )
-   }
- }
+    if (this.state.shirtType === 'hoodie') {
+      return (
+        <HoodieCanvas shirtType={this.state.shirtType}
+              target={this.state.target}
+              shirtColor={this.state.shirtColor}
+              pocketColor={this.state.pocketColor}
+              handleTargetClick={this.handleTargetClick}
+
+              features={this.state.features}
+              showPouch={this.showPouch}
+            />
+        )
+    } else if (this.state.shirtType === 'tshirt') {
+      return (
+        <TshirtCanvas shirtType={this.state.shirtType}
+                target={this.state.target}
+                shirtColor={this.state.shirtColor}
+                pocketColor={this.state.pocketColor}
+                ringerColor={this.state.ringerColor}
+                handleTargetClick={this.handleTargetClick}
+
+                features={this.state.features}
+                showPocket={this.showPocket}
+                showRinger={this.showRinger}
+                showButtons={this.showButtons}
+                />
+      )
+    } else if (this.state.shirtType === 'baseball') {
+      console.log(this.state.shirtType);
+      return (
+        <BaseBallCanvas shirtType={this.state.shirtType}
+                target={this.state.target}
+                shirtColor={this.state.shirtColor}
+                pocketColor={this.state.pocketColor}
+                ringerColor={this.state.ringerColor}
+                handleTargetClick={this.handleTargetClick}
+
+                features={this.state.features}
+
+                />
+      )
+    }
+  }
 
   render() {
+    console.log(this.state.shirtColor)
     return (
       <div>
         <div className="wrapper-1">
           <ShirtTypeContainer chooseShirtType={this.chooseShirtType}
-                              chooseRinger={this.chooseRinger}
                               chooseRinger={this.chooseRinger}
                               chooseFeatures={this.chooseFeatures}
                               chooseButtons={this.chooseButtons}/>

@@ -24,6 +24,12 @@ class ShirtTypeContainer extends Component {
             <img src={ require('../hoodie_template.png') } width="75" />
            </div>
 
+           <div className='baseball'
+             onClick={() => this.props.chooseShirtType('baseball')}>
+             {'Baseball Tee'} <br />
+            <img src={ require('../baseball_template.png') } width="75" />
+           </div>
+
          </div>
 
          <h3>
