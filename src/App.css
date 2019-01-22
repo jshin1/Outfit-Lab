@@ -18,6 +18,11 @@
   justify-content: space-around;
 }
 
+.editor-container {
+  display: flex;
+  justify-content: center;
+}
+
 .shirtTitle {
   font-size: 40px;
 }
@@ -85,3 +90,30 @@
   stroke:#000;
   stroke-width:1px;
   }
+
+.topright {
+  position: absolute;
+  left: 51%;
+  top: 175px;
+  font-size: 15px;
+  /* content:url(https://images.vexels.com/media/users/3/131556/isolated/preview/904af0f5df4690d4236d521bb141b97f-nba-logo-by-vexels.png); */
+
+}
+
+.topright img {
+  height: 50px;
+  width: 50px;
+}
+
+.middle {
+  position: absolute;
+  text-align: center;
+  top: 200px;
+  right: 46%;
+  font-size: 15px;
+}
+
+.middle img {
+  height: 100px;
+  width: 100px;
+}

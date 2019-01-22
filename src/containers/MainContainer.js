@@ -20,16 +20,49 @@ class MainContainer extends Component {
     shirtType: 'tshirt',
     target: '',
     features: [],
-    designs: []
+    designs: [],
+    imgSize: 'small',
+    image1: 'https://i.cdn.turner.com/nba/nba/.element/media/2.0/teamsites/celtics/media/NewAlt_type_grn_1024.png',
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/api/v1/designs')
-    .then(r => r.json())
-    .then(data => {
-      this.setState({
-        designs: data
-      })
+  handleImgSize = (event) => {
+    console.log(event.target.value);
+    this.setState({
+      imgSize: event.target.value
+    })
+  }
+
+  showLogo = () => {
+    if (this.state.imgSize === 'small') {
+      return (
+        <div className="topright">
+          <img src={this.state.image1} />
+        </div>
+      )
+    } else if (this.state.imgSize === 'big') {
+      return (
+        <div className="middle">
+          <img src={this.state.image1} />
+        </div>
+      )
+    }
+  }
+  //
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/api/v1/designs')
+  //   .then(r => r.json())
+  //   .then(data => {
+  //     this.setState({
+  //       designs: data
+  //     })
+  //   })
+  // }
+
+  handleChange = (event) => {
+    event.preventDefault()
+    console.log(event.target.value);
+    this.setState({
+      image1: event.target.value
     })
   }
 
@@ -182,6 +215,7 @@ showPouch = () => {
 
               features={this.state.features}
               showPouch={this.showPouch}
+              showLogo={this.showLogo}
             />
         )
     } else if (this.state.shirtType === 'tshirt') {
@@ -210,7 +244,9 @@ showPouch = () => {
                 handleTargetClick={this.handleTargetClick}
 
                 features={this.state.features}
-
+                image1={this.state.image1}
+                image2={this.state.image2}
+                showLogo={this.showLogo}
                 />
       )
     }
@@ -228,7 +264,10 @@ showPouch = () => {
           {this.showClothing()}
           <GalleryContainer designs={this.state.designs} handleDeleteDesign={this.handleDeleteDesign}/>
           </div>
-          <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign} />
+          <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign}
+            image1={this.state.image1} handleChange={this.handleChange}
+            handleImgSize={this.handleImgSize}
+             />
       </div>
     );
   }
