@@ -7,26 +7,20 @@ class ShirtTypeContainer extends Component {
   render() {
     return (
       <div>
-        <h3>
-           <label className="label">Shirt Types:</label>
-         </h3>
-
-         <div>
-           <div className='tshirt'
+      <label className="label">Shirt Type</label>
+         <div className='shirtType'>
+           <div className='shirt-type'
              onClick={() => this.props.chooseShirtType('tshirt')}>
-             {'T-Shirt'} <br />
             <img src={ require('../basic_template.png') } width="75" />
            </div>
 
-           <div className='hoodie'
+           <div className='shirt-type'
              onClick={() => this.props.chooseShirtType('hoodie')}>
-             {'Hoodie'} <br />
             <img src={ require('../hoodie_template.png') } width="75" />
            </div>
-
-           <div className='baseball'
+           
+           <div className='shirt-type'
              onClick={() => this.props.chooseShirtType('baseball')}>
-             {'Baseball Tee'} <br />
             <img src={ require('../baseball_template.png') } width="75" />
            </div>
 

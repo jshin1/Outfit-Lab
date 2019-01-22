@@ -195,7 +195,6 @@ showPouch = () => {
               shirtColor={this.state.shirtColor}
               pocketColor={this.state.pocketColor}
               handleTargetClick={this.handleTargetClick}
-
               features={this.state.features}
               showPouch={this.showPouch}
             />
@@ -208,7 +207,6 @@ showPouch = () => {
                 pocketColor={this.state.pocketColor}
                 ringerColor={this.state.ringerColor}
                 handleTargetClick={this.handleTargetClick}
-
                 features={this.state.features}
                 showPocket={this.showPocket}
                 showRinger={this.showRinger}
@@ -224,9 +222,7 @@ showPouch = () => {
                 pocketColor={this.state.pocketColor}
                 ringerColor={this.state.ringerColor}
                 handleTargetClick={this.handleTargetClick}
-
                 features={this.state.features}
-
                 />
       )
     }
