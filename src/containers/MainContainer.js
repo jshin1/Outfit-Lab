@@ -111,6 +111,22 @@ class MainContainer extends Component {
 
   handleDeleteDesign = (e) => {
     console.log(e.target.value)
+    let deleteDesign = this.state.designs.find(design => {
+      return design.id == e.target.value
+    })
+    let updatedDesigns = this.state.designs.filter(design => {
+      return design != deleteDesign
+    })
+    fetch(`http://localhost:3000/api/v1/designs/${deleteDesign.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json'
+      }
+    })
+    this.setState({
+      designs: updatedDesigns
+    })
   }
 
   // All features for base Tee Shirt
@@ -212,7 +228,6 @@ showPouch = () => {
               shirtColor={this.state.shirtColor}
               pocketColor={this.state.pocketColor}
               handleTargetClick={this.handleTargetClick}
-
               features={this.state.features}
               showPouch={this.showPouch}
               showLogo={this.showLogo}
@@ -226,7 +241,6 @@ showPouch = () => {
                 pocketColor={this.state.pocketColor}
                 ringerColor={this.state.ringerColor}
                 handleTargetClick={this.handleTargetClick}
-
                 features={this.state.features}
                 showPocket={this.showPocket}
                 showRinger={this.showRinger}
@@ -242,10 +256,8 @@ showPouch = () => {
                 pocketColor={this.state.pocketColor}
                 ringerColor={this.state.ringerColor}
                 handleTargetClick={this.handleTargetClick}
-
                 features={this.state.features}
                 image1={this.state.image1}
-                image2={this.state.image2}
                 showLogo={this.showLogo}
                 />
       )

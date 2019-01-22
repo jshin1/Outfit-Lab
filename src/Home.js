@@ -9,27 +9,15 @@ class Home extends Component {
 
       <Carousel>
         <Carousel.Item>
-          
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
+          <img src={ require("./slider_1.jpg")} />
         </Carousel.Item>
         <Carousel.Item>
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
+          <img src={ require("./slider_2.jpg") } />
         </Carousel.Item>
         <Carousel.Item>
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </Carousel.Caption>
+          <img src={ require("./slider_3.jpg") } />
         </Carousel.Item>
-      </Carousel>;
+      </Carousel>
       </div>
     );
   }
