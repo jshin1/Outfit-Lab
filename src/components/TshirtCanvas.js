@@ -13,6 +13,7 @@ class TshirtCanvas extends Component {
           {this.props.showRinger()}
           {this.props.showButtons()}
         </svg>
+          
       </div>
     );
   }

@@ -3,10 +3,12 @@ import Canvas from '../components/Canvas'
 import ShirtTypeContainer from './ShirtTypeContainer'
 import EditorContainer from './EditorContainer'
 import GalleryContainer from './GalleryContainer'
+import DragResizeContainer from 'react-drag-resize';
 
 import HoodieCanvas from '../components/HoodieCanvas'
 import TshirtCanvas from '../components/TshirtCanvas'
 import BaseBallCanvas from '../components/BaseBallCanvas'
+
 
 
 class MainContainer extends Component {
@@ -65,13 +67,13 @@ class MainContainer extends Component {
         ringerColor: this.state.ringerColor,
         user_id: 1
       })
-      // .then(r => r.json())
-      // .then(data => {
-      //   this.setState({
-      //     designs: [...this.state.designs, data]
-      //   })
-      // })
     })
+      .then(r => r.json())
+      .then(data => {
+        this.setState({
+          designs: [...this.state.designs, data]
+        })
+      })
   }
 
   handleDeleteDesign = (e) => {
