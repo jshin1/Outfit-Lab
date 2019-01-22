@@ -78,6 +78,22 @@ class MainContainer extends Component {
 
   handleDeleteDesign = (e) => {
     console.log(e.target.value)
+    let deleteDesign = this.state.designs.find(design => {
+      return design.id == e.target.value
+    })
+    let updatedDesigns = this.state.designs.filter(design => {
+      return design != deleteDesign
+    })
+    fetch(`http://localhost:3000/api/v1/designs/${deleteDesign.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept' : 'application/json',
+        'Content-Type' : 'application/json'
+      }
+    })
+    this.setState({
+      designs: updatedDesigns
+    })
   }
 
   // All features for base Tee Shirt

@@ -53,22 +53,44 @@
   margin-top: -10%;
   margin-left: 23%;
   margin-right: 23%;
-  border: 5px solid lightgrey;
+  border: 1px solid transparent;
 }
 
 .shirtColor {
-  width: 130%;
+  width: 140%;
+  stroke:#000;
+  stroke-width:5px;
+}
+
+.shirt-gallery {
+  stroke:#000;
+  stroke-width:5px;
+}
+
+.gallery-hoodie {
+  stroke:#000;
+  stroke-width:5px;
+}
+
+.gallery-baseball {
   stroke:#000;
   stroke-width:5px;
 }
 
 .save-button {
   background-color: transparent;
+  position: absolute;
   border: 2px solid lightgrey;
   font-family: 'Raleway', sans-serif;
   float: right;
   margin-top: -50%;
   font-size: 18px;
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
 }
 
 /* color-picker swatch pallete within editor-container */
