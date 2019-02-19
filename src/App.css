@@ -1,3 +1,33 @@
+/* landing page  */
+.logo {
+  position: fixed;
+  display: none;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  right: 0;
+  bottom: 0;
+  }
+/* images in landing page (used with bootstrap slider) */
+.bg-image {
+  width: 100%;
+  height: auto;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}
+
+.nav-bar {
+  position: fixed;
+  font-size: 24px;
+  margin-left: 5%;
+  margin-top: 5%;
+  z-index: 1000;
+}
+
+/* labels above gallery and shirtType containers */
 .label {
   background-color: transparent;
   font-size: 18px;
@@ -6,22 +36,17 @@
   color: black;
 }
 
+/* contains canvas and galleries (using flebox) */
 .wrapper-1 {
   display: flex;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 12%;
+  margin-right: 12%;
   margin-top: 2.75%;
-  border:2px solid lightgrey;
   height: 500px;
   font-size: 20px;
   font-family: 'Raleway', sans-serif;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.editor-container {
-  display: flex;
-  justify-content: center;
 }
 
 .shirtTitle {
@@ -41,7 +66,6 @@
   height: 100px;
   width: 100px;
   background: none;
-  border:2px solid lightgrey;
   margin: 10px;
 }
 
@@ -52,12 +76,32 @@
 }
 
 .editor-container {
-  position: relative;;
-  height: auto;
-  margin-top: -10%;
+  display: flex;
+  justify-content: center;
+  margin-top: -5%;
   margin-left: 23%;
   margin-right: 23%;
-  border: 1px solid transparent;
+}
+
+/* dropdown for large or small img. */
+#image-select {
+  border: none;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  border-radius: 0;
+  background: transparent;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+/* image url input */
+#image-form {
+  border: none;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  border-radius: 0;
+  background: transparent;
+  font-family: 'Raleway', sans-serif;
 }
 
 .gallery-container {
@@ -91,9 +135,8 @@
   background-color: transparent;
   position: absolute;
   border: 2px solid lightgrey;
-  font-family: 'Raleway', sans-serif;
-  float: right;
-  margin-top: -50%;
+  top: 25%;
+  left: 25%;
   font-size: 18px;
 }
 
@@ -108,15 +151,15 @@
   max-width: 33%;
 }
 
-
 .outer-circle{
   fill:none;
   stroke-width:2px;
-  }
-  .inner-circle{
+}
+
+.inner-circle{
   stroke:#000;
   stroke-width:1px;
-  }
+}
 
 .topright {
   position: absolute;
@@ -143,4 +186,23 @@
 .middle img {
   height: 100px;
   width: 100px;
+}
+
+.topright img {
+  height: 50px;
+  width: 50px;
+}
+
+.aboutus-wrapper {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10%;
+}
+
+.profile-pic {
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
 }

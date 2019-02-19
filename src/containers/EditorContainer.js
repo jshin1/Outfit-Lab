@@ -19,8 +19,8 @@ class EditorContainer extends Component {
         handleChange={this.props.handleChange}
         handleImgSize={this.props.handleImgSize}
        />
-       <button onClick={this.props.handleSaveDesign} className="save-button">Save Design+</button>
       </div>
+      <button onClick={this.props.handleSaveDesign} className="save-button">Save Design+</button>
     </div>
     );
   }

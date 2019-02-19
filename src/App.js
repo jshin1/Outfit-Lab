@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import MainContainer from './containers/MainContainer'
 import Home from './Home'
+import About from './About'
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-
-const About = props => <h1>About</h1>
 
 class App extends Component {
   render() {
@@ -13,9 +12,11 @@ class App extends Component {
       <div className="App">
         <Router>
           <>
-            <nav>
+            <nav className="nav-bar">
               <Link to="/">Home</Link>
+              <br/>
               <Link to="/design">Design</Link>
+              <br/>
               <Link to="/about">About Us</Link>
             </nav>
             <Route path="/" exact component={Home} />

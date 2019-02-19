@@ -6,6 +6,8 @@ import { Label } from 'react-bootstrap';
 class GalleryContainer extends Component {
 
   render() {
+
+
     return (
       <div>
       <Label>My Gallery</Label>
@@ -17,18 +19,21 @@ class GalleryContainer extends Component {
               console.log(design)
               if(design.shirtType === 'tshirt') {
                 return <div><svg className="gallery-shirt" fill={design.shirtColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.13 380.91">
-                <path className="ringerColor" fill={design.ringerColor} d="M279.69,161.34s59.24-23.89,67.22-31.8a9.53,9.53,0,0,1,1.12,6.74s-47.61,24.8-60.56,29.56C284.75,165.84,281,163.54,279.69,161.34Z"/>
-                <path className="ringerColor" fill={design.ringerColor} d="M122.91,7.62s-2.55,28,45.34,27.42S220.08,18.83,225.62,5.4l-6.78-2.73-3.71,3.46s.45,19.91-43.9,21.29S132.76,6.58,129.39,4.65,122.91,7.62,122.91,7.62Z"/>
-                <path className="ringerColor" fill={design.ringerColor} d="M4.91,133.9s38.42,18.18,65.22,25.62c-2.17,6-2.25,4.92-2.25,4.92S44.35,158.73,41.72,158,5.11,143,3.46,141.38,4.91,133.9,4.91,133.9Z"/>
 
-                if(design.pocketColor){
-                  <path className="pocketColor" fill={design.pocketColor} d="M188.1,92h44.27v36l-10.94,8.45a18.32,18.32,0,0,1-22.39,0L188.1,128Z"/>
-                }
                 <path className="shirt" d="M129.26,3.53s-36.6,14.29-60.34,22S38.2,49.93,34,60.41,1.89,142.1,1.89,142.1s44,22.34,66,22.34c6.63-9.07,7.33-17.45,7.33-17.45l.7-14s-.7,123.59-.7,136.16-2.8,89.37-1.4,91.46,155,12.57,208.07,0c4.19-5.58,0-21.64,0-21.64L276.3,224.49s-4.19-88.67-4.19-85.18,6.28,29.32,15.36,26.53,60.74-26.53,61.44-30.72S318.19,78.56,314,69.48,296.55,29.69,277,24.1,216.17,1.59,216.17,1.59,180.23,11.91,129.26,3.53Z"/>
                 <path className="shirt" d="M129.26,3.53S131.7,27.91,172.68,27,218.26,5.44,216.17,1.59"/>
                 <path className="shirt" d="M171.23,27.42c41-.9,45.57-21.56,43.49-25.41,0,0-34.36,11-85.33,2.64C129.39,4.65,130.25,28.33,171.23,27.42Z"/>
 
-                </svg><button className='delete-button' value={design.id} onClick={this.props.handleDeleteDesign}>🗑</button></div>
+                <path className="pocketColor" fill={design.pocketColor} d="M188.1,92h44.27v36l-10.94,8.45a18.32,18.32,0,0,1-22.39,0L188.1,128Z"/>
+
+                <path className="ringerColor" fill={design.ringerColor} d="M279.69,161.34s59.24-23.89,67.22-31.8a9.53,9.53,0,0,1,1.12,6.74s-47.61,24.8-60.56,29.56C284.75,165.84,281,163.54,279.69,161.34Z"/>
+                <path className="ringerColor" fill={design.ringerColor} d="M122.91,7.62s-2.55,28,45.34,27.42S220.08,18.83,225.62,5.4l-6.78-2.73-3.71,3.46s.45,19.91-43.9,21.29S132.76,6.58,129.39,4.65,122.91,7.62,122.91,7.62Z"/>
+                <path className="ringerColor" fill={design.ringerColor} d="M4.91,133.9s38.42,18.18,65.22,25.62c-2.17,6-2.25,4.92-2.25,4.92S44.35,158.73,41.72,158,5.11,143,3.46,141.38,4.91,133.9,4.91,133.9Z"/>
+
+                </svg>
+                <button className='delete-button' value={design.id} onClick={this.props.handleDeleteDesign}>🗑</button>
+                <button id={design.id} onClick={this.props.handleEditDesign}>Edit+</button></div>
+
               } else if (design.shirtType === 'hoodie') {
                 return <div><svg className="gallery-hoodie" fill={design.shirtColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.13 405.91">
                   <path class="shirtColor" d="M136.33,19.07s26.23,5.93,41,3.56S167.3,43.47,167.3,43.47s-15.4,5.62-21.91-4.06A70.16,70.16,0,0,1,136.33,19.07Z"/>
@@ -37,7 +42,9 @@ class GalleryContainer extends Component {
                   <path class="shirtColor" d="M127.93,54.84c.56,31-3,52.44-3,52.44-.3,1.82-2.48,8,1.49,10.9,2,1.47,5.29,4.71,7.35,4.71a1.64,1.64,0,0,0,1.31-.39c.66-.77.25-2.23.16-2.55-1.4-5.1.06-48.22.32-54.65.15-3.77-1.35-7.83.09-11.32,1.71-4.11-.15-10.54-.73-11.17s-3.95-4.23-7.12-2.86c0,0-2.1-1-.29,5.61C127.63,47.42,127.86,50.72,127.93,54.84Z"/>
                   <path class="shirtColor" d="M176.68,43.47A21.81,21.81,0,0,0,169.3,57.8v9.13c-.36,3.5-.89,8.43-1.61,14.33-.6,5-1.11,8.75-1.47,11.43-1.68,12.46-3.46,25.13-4.42,32a2.49,2.49,0,0,0,.23,1.75c1.42,2.27,8.49,2,11.37-1.43,3.23-3.85,1.36-11.89,1.36-12.1h0c2.05-37.87,3.34-52,4.18-56.19l1.57-7.84h0l-2.71-4.91Z"/>
                    <path class="pocketColor" fill={design.pocketColor} d="M83.39,302.57s2.94,17.54,3.23,20.68C88,337.64,88.1,341,91,343.93c4.65,4.7,11.44,2.12,28.94.61,13.16-1.14,22.71-.84,41.42-.25,17.71.57,19.58,1.78,32.87,1.74a216.72,216.72,0,0,0,33.53-2.73,105.06,105.06,0,0,0,3.52-21.2,101.92,101.92,0,0,0-.62-19.2,109.94,109.94,0,0,0-4-17.67c-8.58-30.19-6.66-35.17-12.41-39.7-4.5-3.54-7.87-2.23-25.88-1.88-25.27.5-64.26-1.19-67-1.31-9.74-.43-12.2-.72-15.62,1.12-7.36,4-9.41,12.55-17.85,43C85.81,294,84.15,299.85,83.39,302.57Z"/>
-                </svg><button className='delete-button' value={design.id} onClick={this.props.handleDeleteDesign}>🗑</button></div>
+                </svg><button className='delete-button' value={design.id} onClick={this.props.handleDeleteDesign}>🗑</button>
+                <button id={design.id} onClick={this.props.handleEditDesign}>Edit+</button>
+                </div>
               } else if (design.shirtType === 'baseball') {
                 return <div> <svg className='gallery-baseball' fill={design.shirtColor} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 458.13 405.91">
                   <path id="_3_4sleeve" data-name="3/4sleeve" className="shirtColor" d="M127.32,1.64S61.12,24.49,50.64,25.45c-20.95,12.38-20,32.38-34.76,123.82S1.59,254.52,1.59,254.52s11.9,3.81,17.14,4.76,31.43-2.38,40.48-3.81c0,0,10-98.58,11-110.49S73,121.65,73,121.65L68.74,265.47,64.45,368.34s48.58,6.19,62.87,5.71,69.53-4.23,123.82,0c19.52,0,31.43-7.17,31.43-7.17L276.51,137c.4,8.21,1.24,21.08,3.27,36.85,2.12,16.48,3.83,22.92,5.25,35a245.59,245.59,0,0,1,.87,47.59,76.15,76.15,0,0,0,14.23,4.41,41.59,41.59,0,0,0,5.3.83s27.14-2.86,38.1-14.29c-4.29-18.09-20.48-147.63-23.34-175.25S302.57,23.07,265.9,18.3L217.8,1.64S210.66,5,202.56,7.83,150.65,14.49,127.32,1.64Z"/>

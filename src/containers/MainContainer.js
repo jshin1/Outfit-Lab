@@ -47,16 +47,16 @@ class MainContainer extends Component {
       )
     }
   }
-  //
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/designs')
-  //   .then(r => r.json())
-  //   .then(data => {
-  //     this.setState({
-  //       designs: data
-  //     })
-  //   })
-  // }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/api/v1/designs')
+    .then(r => r.json())
+    .then(data => {
+      this.setState({
+        designs: data
+      })
+    })
+  }
 
   handleChange = (event) => {
     event.preventDefault()
@@ -126,6 +126,19 @@ class MainContainer extends Component {
     })
     this.setState({
       designs: updatedDesigns
+    })
+  }
+
+  handleEditDesign = (e) => {
+    fetch(`http://localhost:3000/api/v1/designs/${e.target.id}`)
+    .then(res => res.json())
+    .then(data => {
+      this.setState({
+        pocketColor: data.pocketColor,
+        ringerColor: data.ringerColor,
+        shirtColor: data.shirtColor,
+        shirtType: data.shirtType
+      })
     })
   }
 
@@ -265,7 +278,7 @@ showPouch = () => {
   }
 
   render() {
-    console.log(this.state.shirtColor)
+    console.log(this.state.designs)
     return (
       <div>
         <div className="wrapper-1">
@@ -274,7 +287,7 @@ showPouch = () => {
                               chooseFeatures={this.chooseFeatures}
                               chooseButtons={this.chooseButtons}/>
           {this.showClothing()}
-          <GalleryContainer designs={this.state.designs} handleDeleteDesign={this.handleDeleteDesign}/>
+          <GalleryContainer designs={this.state.designs} handleDeleteDesign={this.handleDeleteDesign} handleEditDesign={this.handleEditDesign}/>
           </div>
           <EditorContainer changeColor={this.changeColor} handleSaveDesign={this.handleSaveDesign}
             image1={this.state.image1} handleChange={this.handleChange}
