@@ -86,7 +86,7 @@ class MainContainer extends Component {
     })
   }
 
-  handleSaveDesign = (e) => {
+  handleSaveDesign = () => {
     fetch('http://localhost:3000/api/v1/designs', {
       method: 'POST',
       headers: {
@@ -97,7 +97,7 @@ class MainContainer extends Component {
         shirtType: this.state.shirtType,
         shirtColor: this.state.shirtColor,
         pocketColor: this.state.pocketColor,
-        ringerColor: this.state.ringerColor,
+        ringer: this.state.ringerColor,
         user_id: 1
       })
     })
