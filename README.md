@@ -8,7 +8,7 @@ OUTFIT LAB is another fashion application that allows users to design various ar
 
 React, JavaScript, Ruby on Rails, Bootstrap
 
-## Link to Backend
+## Link to Backend Repo
 
 https://github.com/jshin1/Outfit-Lab-API
 
