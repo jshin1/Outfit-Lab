@@ -1,8 +1,8 @@
-# OUTFIT DESIGNR (Frontend) README
+# OUTFIT LAB (Frontend) README
 
 ## Project Summary
 
-This is another fashion application that allows users to design various articles of clothing (e.g. t-shirts, baseball tees, hoodies) with colors, graphics, and features, such as buttons, laces, and stitching.
+OUTFIT LAB is another fashion application that allows users to design various articles of clothing (e.g. t-shirts, baseball tees, hoodies) with colors, graphics, and features, such as buttons, laces, and stitching.
 
 ## Stack
 
